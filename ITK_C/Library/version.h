@@ -22,12 +22,12 @@
 
 #define IPJ_VERSION_MAJOR_NUMBER         1
 #define IPJ_VERSION_MINOR_NUMBER         8
-#define IPJ_VERSION_MAINTENANCE_NUMBER   0
+#define IPJ_VERSION_MAINTENANCE_NUMBER   12
 #define IPJ_VERSION_RELEASE_NUMBER       240
 
-#define IPJ_VERSION_STRING "1.8.0.240"
+#define IPJ_VERSION_STRING "1.8.12.240"
 
-/* VERSION 0x010800F0 */
+/* VERSION 0x01080CF0 */
 #define IPJ_VERSION   (((uint32_t)IPJ_VERSION_MAJOR_NUMBER       << 24)  | \
                        ((uint32_t)IPJ_VERSION_MINOR_NUMBER       << 16)  | \
                        ((uint32_t)IPJ_VERSION_MAINTENANCE_NUMBER <<  8)  | \
