@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="ipj_util"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;;&quot;$(SolutionDir)..\..\Library&quot;;&quot;$(SolutionDir)..\..\Library\PbMessages&quot;;&quot;$(SolutionDir)..\..\Library\Nanopb&quot;"
+	/>
+</VisualStudioPropertySheet>

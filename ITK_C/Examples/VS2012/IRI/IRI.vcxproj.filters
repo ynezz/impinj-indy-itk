@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Nanopb">
+      <UniqueIdentifier>{55900855-6632-42dd-a4aa-8267e1fdafbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PbMessages">
+      <UniqueIdentifier>{1d9087ff-8e76-4173-9dea-8c13b37cfa58}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Library\iri.c" />
+    <ClCompile Include="..\..\..\Library\platform_win32.c" />
+    <ClCompile Include="..\..\..\Library\Nanopb\pb_decode.c">
+      <Filter>Nanopb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\Nanopb\pb_encode.c">
+      <Filter>Nanopb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\PbMessages\commands.pb.c">
+      <Filter>PbMessages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\PbMessages\messages.pb.c">
+      <Filter>PbMessages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\PbMessages\packet.pb.c">
+      <Filter>PbMessages</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Library\iri.h" />
+    <ClInclude Include="..\..\..\Library\platform.h" />
+    <ClInclude Include="..\..\..\Library\version.h" />
+    <ClInclude Include="..\..\..\Library\Nanopb\pb.h">
+      <Filter>Nanopb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\Nanopb\pb_decode.h">
+      <Filter>Nanopb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\Nanopb\pb_encode.h">
+      <Filter>Nanopb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\PbMessages\commands.pb.h">
+      <Filter>PbMessages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\PbMessages\enums.pb.h">
+      <Filter>PbMessages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\PbMessages\error_codes.pb.h">
+      <Filter>PbMessages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\PbMessages\key_codes.pb.h">
+      <Filter>PbMessages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\PbMessages\messages.pb.h">
+      <Filter>PbMessages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\PbMessages\packet.pb.h">
+      <Filter>PbMessages</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,6 @@
+name: indy-release-itk
+repo: libs-release-local
+repo_path: com/impinj/firmware/Indy-IRI
+scm_ref: a8c7656
+suffix: .zip
+version: 01.06.07.240

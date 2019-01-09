@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Library\iri.c" />
+    <ClCompile Include="..\..\..\Library\Nanopb\pb_decode.c" />
+    <ClCompile Include="..\..\..\Library\Nanopb\pb_encode.c" />
+    <ClCompile Include="..\..\..\Library\PbMessages\commands.pb.c" />
+    <ClCompile Include="..\..\..\Library\PbMessages\messages.pb.c" />
+    <ClCompile Include="..\..\..\Library\PbMessages\packet.pb.c" />
+    <ClCompile Include="..\..\..\Library\platform_win32.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Library\iri.h" />
+    <ClInclude Include="..\..\..\Library\Nanopb\pb.h" />
+    <ClInclude Include="..\..\..\Library\Nanopb\pb_decode.h" />
+    <ClInclude Include="..\..\..\Library\Nanopb\pb_encode.h" />
+    <ClInclude Include="..\..\..\Library\PbMessages\commands.pb.h" />
+    <ClInclude Include="..\..\..\Library\PbMessages\enums.pb.h" />
+    <ClInclude Include="..\..\..\Library\PbMessages\error_codes.pb.h" />
+    <ClInclude Include="..\..\..\Library\PbMessages\key_codes.pb.h" />
+    <ClInclude Include="..\..\..\Library\PbMessages\messages.pb.h" />
+    <ClInclude Include="..\..\..\Library\PbMessages\packet.pb.h" />
+    <ClInclude Include="..\..\..\Library\platform.h" />
+    <ClInclude Include="..\..\..\Library\version.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{388BBE26-4128-4201-8DC4-C13C8F3B8710}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="IRI.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="IRI.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,17 @@
+#
+# IRI Library Porting Instructions
+#
+
+The IRI library has been designed with portability in mind. To port to a
+new platform simply copy a platform_*.c file and fill in the API with
+code that is appropriate to the new platform.
+
+As a convenient starting point, platform_empty.c has been provided with
+empty stubs for each required API call.
+
+For a complete build of the library, one platform_*.c file and all other
+.c files in this directory and subdirectories need to be compiled and linked.
+
+See the Examples directory for a Makefile or a Microsoft Visual Studio solution
+that compiles an IRI library.
+

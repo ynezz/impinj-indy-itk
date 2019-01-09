@@ -1,0 +1,162 @@
+/*
+ *****************************************************************************
+ * Copyright 2016 Impinj, Inc.                                               *
+ *                                                                           *
+ * Licensed under the Apache License, Version 2.0 (the "License");           *
+ * you may not use this file except in compliance with the License.          *
+ * You may obtain a copy of the License at                                   *
+ *                                                                           *
+ * http://www.apache.org/licenses/LICENSE-2.0                                *
+ *                                                                           *
+ * Unless required by applicable law or agreed to in writing, software       *
+ * distributed under the License is distributed on an "AS IS" BASIS,         *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *
+ * See the License for the specific language governing permissions and       *
+ * limitations under the License.                                            *
+ *****************************************************************************/
+/* Automatically generated nanopb header */
+#ifndef _PB_KEY_CODES_PB_H_
+#define _PB_KEY_CODES_PB_H_
+#include <pb.h>
+
+
+/* Enum definitions */
+typedef uint32_t ipj_key;
+#define E_IPJ_KEY_BOOTSTRAP_VERSION ((uint32_t)(0x1))
+#define E_IPJ_KEY_BOOTSTRAP_CRC ((uint32_t)(0x2))
+#define E_IPJ_KEY_APPLICATION_VERSION ((uint32_t)(0x3))
+#define E_IPJ_KEY_APPLICATION_CRC ((uint32_t)(0x4))
+#define E_IPJ_KEY_SECONDARY_IMAGE_VERSION ((uint32_t)(0x5))
+#define E_IPJ_KEY_SECONDARY_IMAGE_CRC ((uint32_t)(0x6))
+#define E_IPJ_KEY_SECONDARY_IMAGE_TYPE ((uint32_t)(0x7))
+#define E_IPJ_KEY_APPLICATION_REVISION_ID ((uint32_t)(0x8))
+#define E_IPJ_KEY_APPLICATION_BUILD_ID ((uint32_t)(0x9))
+#define E_IPJ_KEY_PRODUCT_ID ((uint32_t)(0xA))
+#define E_IPJ_KEY_SERIAL_NUMBER ((uint32_t)(0xB))
+#define E_IPJ_KEY_TRANSCEIVER_ID ((uint32_t)(0xC))
+#define E_IPJ_KEY_MICROPROCESSOR_ID ((uint32_t)(0xD))
+#define E_IPJ_KEY_CUSTOMER_VERSION ((uint32_t)(0xE))
+#define E_IPJ_KEY_CUSTOMER_ID ((uint32_t)(0xF))
+#define E_IPJ_KEY_CUSTOMER_PRODUCT_ID ((uint32_t)(0x10))
+#define E_IPJ_KEY_CALIBRATION_INFO ((uint32_t)(0x11))
+#define E_IPJ_KEY_TEST_INFO ((uint32_t)(0x12))
+#define E_IPJ_KEY_PRODUCT_SKU ((uint32_t)(0x13))
+#define E_IPJ_KEY_LOT_DATE_CODE ((uint32_t)(0x14))
+#define E_IPJ_KEY_PRODUCT_KEY ((uint32_t)(0x15))
+#define E_IPJ_KEY_SECONDARY_IMAGE_LOCATION ((uint32_t)(0x16))
+#define E_IPJ_KEY_SECONDARY_IMAGE_SIZE ((uint32_t)(0x17))
+#define E_IPJ_KEY_UNIQUE_ID ((uint32_t)(0x18))
+#define E_IPJ_KEY_HARDWARE_REVISION ((uint32_t)(0x19))
+#define E_IPJ_KEY_SYSTEM_TIMESTAMP_MS ((uint32_t)(0x1A))
+#define E_IPJ_KEY_ACTIVE_ACTIONS ((uint32_t)(0x1B))
+#define E_IPJ_KEY_REGION_ID ((uint32_t)(0x20))
+#define E_IPJ_KEY_REGION_CHANNEL_TABLE ((uint32_t)(0x21))
+#define E_IPJ_KEY_REGION_CHANNEL_TABLE_SIZE ((uint32_t)(0x22))
+#define E_IPJ_KEY_REGION_ON_TIME_NOMINAL ((uint32_t)(0x23))
+#define E_IPJ_KEY_REGION_ON_TIME_ACCESS ((uint32_t)(0x24))
+#define E_IPJ_KEY_REGION_OFF_TIME ((uint32_t)(0x25))
+#define E_IPJ_KEY_REGION_OFF_TIME_SAME_CHANNEL ((uint32_t)(0x26))
+#define E_IPJ_KEY_REGION_START_FREQUENCY_KHZ ((uint32_t)(0x27))
+#define E_IPJ_KEY_REGION_CHANNEL_SPACING_KHZ ((uint32_t)(0x28))
+#define E_IPJ_KEY_REGION_RANDOM_HOP ((uint32_t)(0x29))
+#define E_IPJ_KEY_REGION_INDY_PLL_R_DIVIDER ((uint32_t)(0x2A))
+#define E_IPJ_KEY_REGION_RF_FILTER ((uint32_t)(0x2B))
+#define E_IPJ_KEY_ANTENNA_TX_POWER ((uint32_t)(0x31))
+#define E_IPJ_KEY_ANTENNA_SEQUENCE ((uint32_t)(0x32))
+#define E_IPJ_KEY_INVENTORY_TAG_POPULATION ((uint32_t)(0x40))
+#define E_IPJ_KEY_INVENTORY_SELECT_FLAG ((uint32_t)(0x41))
+#define E_IPJ_KEY_INVENTORY_SESSION ((uint32_t)(0x42))
+#define E_IPJ_KEY_INVENTORY_SEARCH_MODE ((uint32_t)(0x43))
+#define E_IPJ_KEY_FAST_ID_ENABLE ((uint32_t)(0x45))
+#define E_IPJ_KEY_TAG_FOCUS_ENABLE ((uint32_t)(0x46))
+#define E_IPJ_KEY_TAG_OPERATION_ENABLE ((uint32_t)(0x47))
+#define E_IPJ_KEY_TAG_OPERATION_RETRIES ((uint32_t)(0x48))
+#define E_IPJ_KEY_SELECT_ENABLE ((uint32_t)(0x50))
+#define E_IPJ_KEY_SELECT_TARGET ((uint32_t)(0x51))
+#define E_IPJ_KEY_SELECT_ACTION ((uint32_t)(0x52))
+#define E_IPJ_KEY_SELECT_MEM_BANK ((uint32_t)(0x53))
+#define E_IPJ_KEY_SELECT_POINTER ((uint32_t)(0x54))
+#define E_IPJ_KEY_SELECT_MASK_LENGTH ((uint32_t)(0x55))
+#define E_IPJ_KEY_SELECT_MASK_VALUE ((uint32_t)(0x56))
+#define E_IPJ_KEY_TAG_OPERATION ((uint32_t)(0x60))
+#define E_IPJ_KEY_ACCESS_PASSWORD ((uint32_t)(0x61))
+#define E_IPJ_KEY_KILL_PASSWORD ((uint32_t)(0x62))
+#define E_IPJ_KEY_READ_MEM_BANK ((uint32_t)(0x63))
+#define E_IPJ_KEY_READ_WORD_POINTER ((uint32_t)(0x64))
+#define E_IPJ_KEY_READ_WORD_COUNT ((uint32_t)(0x65))
+#define E_IPJ_KEY_WRITE_MEM_BANK ((uint32_t)(0x66))
+#define E_IPJ_KEY_WRITE_WORD_POINTER ((uint32_t)(0x67))
+#define E_IPJ_KEY_WRITE_WORD_COUNT ((uint32_t)(0x68))
+#define E_IPJ_KEY_WRITE_DATA ((uint32_t)(0x69))
+#define E_IPJ_KEY_LOCK_PAYLOAD ((uint32_t)(0x6A))
+#define E_IPJ_KEY_BLOCKPERMALOCK_ACTION ((uint32_t)(0x6B))
+#define E_IPJ_KEY_BLOCKPERMALOCK_MEM_BANK ((uint32_t)(0x6C))
+#define E_IPJ_KEY_BLOCKPERMALOCK_BLOCK_POINTER ((uint32_t)(0x6D))
+#define E_IPJ_KEY_BLOCKPERMALOCK_BLOCK_RANGE ((uint32_t)(0x6E))
+#define E_IPJ_KEY_BLOCKPERMALOCK_MASK ((uint32_t)(0x6F))
+#define E_IPJ_KEY_WRITE_EPC_LENGTH_CONTROL ((uint32_t)(0x70))
+#define E_IPJ_KEY_WRITE_EPC_LENGTH_VALUE ((uint32_t)(0x71))
+#define E_IPJ_KEY_WRITE_EPC_AFI_CONTROL ((uint32_t)(0x72))
+#define E_IPJ_KEY_WRITE_EPC_AFI_VALUE ((uint32_t)(0x73))
+#define E_IPJ_KEY_QT_ACTION ((uint32_t)(0x74))
+#define E_IPJ_KEY_QT_PERSISTENCE ((uint32_t)(0x75))
+#define E_IPJ_KEY_QT_DATA_PROFILE ((uint32_t)(0x76))
+#define E_IPJ_KEY_QT_ACCESS_RANGE ((uint32_t)(0x77))
+#define E_IPJ_KEY_QT_TAG_OPERATION ((uint32_t)(0x78))
+#define E_IPJ_KEY_AUTOSTOP_DURATION_MS ((uint32_t)(0x89))
+#define E_IPJ_KEY_AUTOSTOP_TAG_COUNT ((uint32_t)(0x8B))
+#define E_IPJ_KEY_AUTOSTOP_ROUND_COUNT ((uint32_t)(0x8C))
+#define E_IPJ_KEY_REPORT_CONTROL_TAG ((uint32_t)(0xA1))
+#define E_IPJ_KEY_REPORT_CONTROL_STATUS ((uint32_t)(0xA2))
+#define E_IPJ_KEY_REPORT_CONTROL_TIMESTAMP ((uint32_t)(0xA3))
+#define E_IPJ_KEY_RESPONSE_CONTROL_TIMESTAMP ((uint32_t)(0xA4))
+#define E_IPJ_KEY_TEMPERATURE_INTERNAL ((uint32_t)(0xB0))
+#define E_IPJ_KEY_TEMPERATURE_EXTERNAL ((uint32_t)(0xB1))
+#define E_IPJ_KEY_TEMPERATURE_PA ((uint32_t)(0xB2))
+#define E_IPJ_KEY_GPIO_MODE ((uint32_t)(0xC0))
+#define E_IPJ_KEY_GPIO_STATE ((uint32_t)(0xC1))
+#define E_IPJ_KEY_GPIO_HI_ACTION ((uint32_t)(0xC2))
+#define E_IPJ_KEY_GPIO_LO_ACTION ((uint32_t)(0xC3))
+#define E_IPJ_KEY_GPIO_PULSE_DURATION ((uint32_t)(0xC4))
+#define E_IPJ_KEY_GPIO_DEBOUNCE_MS ((uint32_t)(0xC5))
+#define E_IPJ_KEY_GPIO_CURRENT_STATE ((uint32_t)(0xC6))
+#define E_IPJ_KEY_RF_MODE ((uint32_t)(0xD0))
+#define E_IPJ_KEY_FIRST_ERROR ((uint32_t)(0xE0))
+#define E_IPJ_KEY_LAST_ERROR ((uint32_t)(0xE1))
+#define E_IPJ_KEY_SYSTEM_ERROR ((uint32_t)(0xE2))
+#define E_IPJ_KEY_CAL_DATA_1 ((uint32_t)(0xF0))
+#define E_IPJ_KEY_CAL_DATA_2 ((uint32_t)(0xF1))
+#define E_IPJ_KEY_CAL_DATA_3 ((uint32_t)(0xF2))
+#define E_IPJ_KEY_CAL_DATA_4 ((uint32_t)(0xF3))
+#define E_IPJ_KEY_CAL_DATA_5 ((uint32_t)(0xF4))
+#define E_IPJ_KEY_CAL_DATA_6 ((uint32_t)(0xF5))
+#define E_IPJ_KEY_CAL_DATA_7 ((uint32_t)(0xF6))
+#define E_IPJ_KEY_CAL_DATA_8 ((uint32_t)(0xF7))
+#define E_IPJ_KEY_DEVICE_BAUDRATE ((uint32_t)(0x100))
+#define E_IPJ_KEY_DEVICE_IDLE_POWER_MODE ((uint32_t)(0x101))
+#define E_IPJ_KEY_ONBOOT_START_ACTION ((uint32_t)(0x102))
+#define E_IPJ_KEY_ENABLE_LT_REPORTS ((uint32_t)(0x103))
+#define E_IPJ_KEY_TEST_ID ((uint32_t)(0x400))
+#define E_IPJ_KEY_TEST_PARAMETERS ((uint32_t)(0x401))
+#define E_IPJ_KEY_TEST_RESULT_1 ((uint32_t)(0x402))
+#define E_IPJ_KEY_TEST_RESULT_2 ((uint32_t)(0x403))
+#define E_IPJ_KEY_TEST_RESULT_3 ((uint32_t)(0x404))
+#define E_IPJ_KEY_TEST_DATA ((uint32_t)(0x405))
+#define E_IPJ_KEY_TEST_FREQUENCY ((uint32_t)(0x406))
+#define E_IPJ_KEY_TEST_POWER ((uint32_t)(0x407))
+#define E_IPJ_KEY_TEST_RF_MODE ((uint32_t)(0x408))
+#define E_IPJ_KEY_TEST_TIME ((uint32_t)(0x409))
+#define E_IPJ_KEY_TEST_EVENT ((uint32_t)(0x40A))
+#define E_IPJ_KEY_TEST_REPORTS ((uint32_t)(0x40B))
+#define E_IPJ_KEY_TEST_SYSTEM ((uint32_t)(0x40C))
+#define E_IPJ_KEY_TEST_DEBUG_PORT ((uint32_t)(0x40D))
+#define E_IPJ_KEY_GENERIC_DATA ((uint32_t)(0xC00))
+#define E_IPJ_KEY_OEM_DATA ((uint32_t)(0xC01))
+#define E_IPJ_KEY_STORED_SETTINGS_LOAD_STATUS ((uint32_t)(0x1021))
+
+/* Struct definitions */
+/* Default values for struct fields */
+
+/* Struct field encoding specification for nanopb */
+
+#endif
