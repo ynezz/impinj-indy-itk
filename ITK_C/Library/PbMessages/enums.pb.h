@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2018 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -96,6 +96,7 @@ typedef uint32_t ipj_test_id;
 #define E_IPJ_TEST_ID_CALIBRATE_TX_PRE_DISTORTION ((uint32_t)(0x6E))
 #define E_IPJ_TEST_ID_CALIBRATE_SET_KEY ((uint32_t)(0x6F))
 #define E_IPJ_TEST_ID_CALIBRATE_FINALIZE_KEYS ((uint32_t)(0x70))
+#define E_IPJ_TEST_ID_CALIBRATE_NOMINAL_GG ((uint32_t)(0x71))
 #define E_IPJ_TEST_ID_HARDWARE_CONTROL ((uint32_t)(0xC9))
 #define E_IPJ_TEST_ID_INVENTORY_CONTROL ((uint32_t)(0xCA))
 #define E_IPJ_TEST_ID_GENERIC_TX_CONTROL ((uint32_t)(0xCB))
@@ -121,6 +122,10 @@ typedef uint32_t ipj_test_id;
 #define E_IPJ_TEST_ID_DEBUG_INFO ((uint32_t)(0xDF))
 #define E_IPJ_TEST_ID_TAG_REPORT_GENERATION ((uint32_t)(0xE0))
 #define E_IPJ_TEST_ID_ANTENNA_CHARACTERIZATION ((uint32_t)(0xE1))
+#define E_IPJ_TEST_ID_CLOSED_LOOP_POWER_CONTROL ((uint32_t)(0xE2))
+#define E_IPJ_TEST_ID_SIMPLE_FORWARD_POWER_CALIBRATION ((uint32_t)(0xE3))
+#define E_IPJ_TEST_ID_SIMPLE_GROSS_GAIN_CALIBRATION ((uint32_t)(0xE4))
+#define E_IPJ_TEST_ID_STACK_USAGE ((uint32_t)(0xE5))
 
 typedef uint32_t ipj_inventory_select_flag;
 #define E_IPJ_INVENTORY_SELECT_FLAG_AUTO_SL ((uint32_t)(0x0))
@@ -234,6 +239,7 @@ typedef uint32_t ipj_product_id;
 #define E_IPJ_PRODUCT_ID_RESERVED_2 ((uint32_t)(0x2))
 #define E_IPJ_PRODUCT_ID_RS2000 ((uint32_t)(0x3))
 #define E_IPJ_PRODUCT_ID_IRD_1 ((uint32_t)(0x4))
+#define E_IPJ_PRODUCT_ID_RS1000 ((uint32_t)(0x5))
 
 typedef uint32_t ipj_product_sku;
 #define E_IPJ_PRODUCT_SKU_NONE ((uint32_t)(0x0))

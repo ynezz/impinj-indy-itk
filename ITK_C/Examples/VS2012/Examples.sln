@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Desktop
+# Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ipj_util", "ipj_util\ipj_util.vcxproj", "{B36CFF8B-6520-43A6-901A-38DB27F4EFA8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IRI", "IRI\IRI.vcxproj", "{388BBE26-4128-4201-8DC4-C13C8F3B8710}"
@@ -65,6 +65,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IRI_Multiple_Readers", "IRI
 		{B36CFF8B-6520-43A6-901A-38DB27F4EFA8} = {B36CFF8B-6520-43A6-901A-38DB27F4EFA8}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IRI_External_Antenna_Mux", "IRI_External_Antenna_Mux\IRI_External_Antenna_Mux.vcxproj", "{8D0843D8-574B-4F2F-A575-2AB4CC014E90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{388BBE26-4128-4201-8DC4-C13C8F3B8710} = {388BBE26-4128-4201-8DC4-C13C8F3B8710}
+		{B36CFF8B-6520-43A6-901A-38DB27F4EFA8} = {B36CFF8B-6520-43A6-901A-38DB27F4EFA8}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IRI_Antenna_Descriptors", "IRI_Antenna_Descriptors\IRI_Antenna_Descriptors.vcxproj", "{8B915CC9-6AFC-41F1-BA1A-E45126BCE524}"
+	ProjectSection(ProjectDependencies) = postProject
+		{388BBE26-4128-4201-8DC4-C13C8F3B8710} = {388BBE26-4128-4201-8DC4-C13C8F3B8710}
+		{B36CFF8B-6520-43A6-901A-38DB27F4EFA8} = {B36CFF8B-6520-43A6-901A-38DB27F4EFA8}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -118,7 +130,14 @@ Global
 		{ECCE2E1B-D7CC-46BB-9CEE-B0BF70B804F6}.Debug|Win32.ActiveCfg = Debug|Win32
 		{ECCE2E1B-D7CC-46BB-9CEE-B0BF70B804F6}.Debug|Win32.Build.0 = Debug|Win32
 		{ECCE2E1B-D7CC-46BB-9CEE-B0BF70B804F6}.Release|Win32.ActiveCfg = Release|Win32
-		{ECCE2E1B-D7CC-46BB-9CEE-B0BF70B804F6}.Release|Win32.Build.0 = Release|Win32
+		{8D0843D8-574B-4F2F-A575-2AB4CC014E90}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8D0843D8-574B-4F2F-A575-2AB4CC014E90}.Debug|Win32.Build.0 = Debug|Win32
+		{8D0843D8-574B-4F2F-A575-2AB4CC014E90}.Release|Win32.ActiveCfg = Release|Win32
+		{8D0843D8-574B-4F2F-A575-2AB4CC014E90}.Release|Win32.Build.0 = Release|Win32
+		{8B915CC9-6AFC-41F1-BA1A-E45126BCE524}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8B915CC9-6AFC-41F1-BA1A-E45126BCE524}.Debug|Win32.Build.0 = Debug|Win32
+		{8B915CC9-6AFC-41F1-BA1A-E45126BCE524}.Release|Win32.ActiveCfg = Release|Win32
+		{8B915CC9-6AFC-41F1-BA1A-E45126BCE524}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

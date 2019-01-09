@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2017 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -20,7 +20,7 @@
 #include "iri.h"
 
 /* PURPOSE: This example illustrates the use of the basic inventory operation
-   and to retrieve RS500 information. */
+   and to retrieve Indy Module information. */
 
 /* Parameters */
 #define IPJ_EXAMPLE_DURATION_MS 1000
@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
     IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_util_setup");
 
     /* Reader Info */
-    printf("RS500 Info\n");
+    printf("Indy Module Info\n");
     error = ipj_get_value(&iri_device, E_IPJ_KEY_SERIAL_NUMBER, &value);
     IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_get_value E_IPJ_KEY_SERIAL_NUMBER");
     printf("Serial Number      : %d\n", value);

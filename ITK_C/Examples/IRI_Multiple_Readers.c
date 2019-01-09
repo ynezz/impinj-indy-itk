@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2017 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -20,8 +20,8 @@
 #include "iri.h"
 #include "platform.h"
 
-/* PURPOSE: This example illustrates the use of multiple readers from one
-   application. */
+/* PURPOSE: This example illustrates the use of multiple reader modules from 
+   one application. */
 
 /* Parameters */
 #define IPJ_EXAMPLE_DURATION_MS 1000

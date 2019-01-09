@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2017 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -86,5 +86,11 @@ ipj_error ipj_util_status_report_handler(
 ipj_error ipj_util_test_report_handler(
         ipj_iri_device* iri_device,
         ipj_test_report* test_report);
-
+ipj_error ipj_util_wait_for_receive(
+        ipj_iri_device * iri_device, 
+        uint32_t timeout_time_ms);
+ipj_error ipj_util_flash_image(
+        const char * image_name, 
+        char * com_port, 
+        ipj_iri_device * iri_device);
 #endif

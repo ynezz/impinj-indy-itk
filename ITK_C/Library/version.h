@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2018 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -21,13 +21,13 @@
 #include <stdint.h>
 
 #define IPJ_VERSION_MAJOR_NUMBER         1
-#define IPJ_VERSION_MINOR_NUMBER         6
-#define IPJ_VERSION_MAINTENANCE_NUMBER   7
+#define IPJ_VERSION_MINOR_NUMBER         8
+#define IPJ_VERSION_MAINTENANCE_NUMBER   0
 #define IPJ_VERSION_RELEASE_NUMBER       240
 
-#define IPJ_VERSION_STRING "1.6.7.240"
+#define IPJ_VERSION_STRING "1.8.0.240"
 
-/* VERSION 0x010607F0 */
+/* VERSION 0x010800F0 */
 #define IPJ_VERSION   (((uint32_t)IPJ_VERSION_MAJOR_NUMBER       << 24)  | \
                        ((uint32_t)IPJ_VERSION_MINOR_NUMBER       << 16)  | \
                        ((uint32_t)IPJ_VERSION_MAINTENANCE_NUMBER <<  8)  | \

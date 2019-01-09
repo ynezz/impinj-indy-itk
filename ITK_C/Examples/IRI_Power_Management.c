@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2017 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
     /* Sleep for 5 seconds */
     sleep_ms(5000);
 
-    printf("Attempting to wake RS500\n");
+    printf("Attempting to wake Indy Module\n");
 
     /* Set the receive timeout MS to a lower number (100ms) */
     error = ipj_set_receive_timeout_ms(&iri_device, 100);
@@ -78,9 +78,9 @@ int main(int argc, char* argv[])
     {
         error = ipj_get_value(&iri_device, E_IPJ_KEY_ANTENNA_TX_POWER, &val);
     } while (error && retries--);
-    IPJ_UTIL_RETURN_ON_ERROR(error, "Wake RS500");
+    IPJ_UTIL_RETURN_ON_ERROR(error, "Wake Indy Module");
 
-    printf("Successfully woke RS500\n");
+    printf("Successfully woke Indy Module\n");
     printf("Performing Inventory to check for full functionality\n");
 
     /* Reset the timeout to it's default value */

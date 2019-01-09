@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2017 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -34,7 +34,7 @@ char const anIdentString[256] = IDENT_STRING;
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
 
-#define IRI_SOFT_RESET_DELAY_MS           300
+#define IRI_SOFT_RESET_DELAY_MS			  100
 #define IPJ_MARKER                        0x8D706A21
 #define IPJ_HDR_VERSION                   2
 #define FIELD_ID(tag)                     ((tag >> 3) & 0xFF)
@@ -850,7 +850,7 @@ static ipj_error ipj_get_info_handler(ipj_rr_union *rr_union, void* args)
 }
 
 /**
- * This function retrieves the value of the specified key code from the IRI device.
+ * This function retrieves information about the specified key code from the IRI device.
  *
  * \return ipj_error
  */

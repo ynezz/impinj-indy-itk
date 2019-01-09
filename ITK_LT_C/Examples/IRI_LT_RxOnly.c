@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2017 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -30,8 +30,8 @@
 
  Step 1: Enable the IRI_RX_ONLY compile switch in the host library's config.h
 
- Step 2: Use the RS500 Tool to load a stored settings file with the following
-         contents:
+ Step 2: Use the Indy Demo Tool to load a stored settings file with the 
+		 following contents:
 
 <?xml version="1.0" ?>
 <Settings>

@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2018 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -136,6 +136,14 @@ typedef uint32_t ipj_key;
 #define E_IPJ_KEY_DEVICE_IDLE_POWER_MODE ((uint32_t)(0x101))
 #define E_IPJ_KEY_ONBOOT_START_ACTION ((uint32_t)(0x102))
 #define E_IPJ_KEY_ENABLE_LT_REPORTS ((uint32_t)(0x103))
+#define E_IPJ_KEY_IN_BOOTSTRAP ((uint32_t)(0x104))
+#define E_IPJ_KEY_EXTERNAL_ANTENNA_MUX_ENABLE ((uint32_t)(0x200))
+#define E_IPJ_KEY_EXTERNAL_ANTENNA_MUX_NUM_ANTENNAS ((uint32_t)(0x201))
+#define E_IPJ_KEY_EXTERNAL_ANTENNA_MUX_PHYSICAL_PORT ((uint32_t)(0x202))
+#define E_IPJ_KEY_EXTERNAL_ANTENNA_MUX_DELAY_MICROSECONDS ((uint32_t)(0x203))
+#define E_IPJ_KEY_ANTENNA_SEQUENCE_OPTION ((uint32_t)(0x220))
+#define E_IPJ_KEY_ANTENNA_DESCRIPTORS ((uint32_t)(0x221))
+#define E_IPJ_KEY_ANTENNA_PHYSICAL_PORT ((uint32_t)(0x222))
 #define E_IPJ_KEY_TEST_ID ((uint32_t)(0x400))
 #define E_IPJ_KEY_TEST_PARAMETERS ((uint32_t)(0x401))
 #define E_IPJ_KEY_TEST_RESULT_1 ((uint32_t)(0x402))
@@ -152,7 +160,11 @@ typedef uint32_t ipj_key;
 #define E_IPJ_KEY_TEST_DEBUG_PORT ((uint32_t)(0x40D))
 #define E_IPJ_KEY_GENERIC_DATA ((uint32_t)(0xC00))
 #define E_IPJ_KEY_OEM_DATA ((uint32_t)(0xC01))
+#define E_IPJ_KEY_BLOCK_WRITE_OVERRIDE ((uint32_t)(0x1018))
+#define E_IPJ_KEY_SJC_CONTROL ((uint32_t)(0x101B))
 #define E_IPJ_KEY_STORED_SETTINGS_LOAD_STATUS ((uint32_t)(0x1021))
+#define E_IPJ_KEY_PA_DIE_TEMPERATURE_TX_DUTY_CYCLE_LIMIT ((uint32_t)(0x1022))
+#define E_IPJ_KEY_TEMP_COMP_OFFSETS ((uint32_t)(0x1023))
 
 /* Struct definitions */
 /* Default values for struct fields */

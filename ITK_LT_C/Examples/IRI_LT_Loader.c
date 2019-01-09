@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2017 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -111,7 +111,7 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    /* For each chunk in the image file, write it to the RS500 */
+    /* For each chunk in the image file, write it to the Indy Module */
     while (fread(file_buf, chunk_size, 1, image_file_handle) > 0)
     {
         error = ipj_flash_handle_loader_block(&iri_device, chunk_size, file_buf);

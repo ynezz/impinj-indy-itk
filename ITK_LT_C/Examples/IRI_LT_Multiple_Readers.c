@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2017 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -19,9 +19,9 @@
 #include "iri_lt.h"
 #include "platform.h"
 
-/* PURPOSE: This example illustrates the use of multiple readers from one
-   application. It does not use ipj_util, but rather locally copies and modifies
-   ipj_util helper functions to support multiple readers. */
+/* PURPOSE: This example illustrates the use of multiple reader modules from 
+   one application. It does not use ipj_util, but rather locally copies and 
+   modifies ipj_util helper functions to support multiple readers. */
 
 /* Parameters */
 #define IPJ_EXAMPLE_DURATION_MS 1000

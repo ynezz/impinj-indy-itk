@@ -1,6 +1,6 @@
 /*
  *****************************************************************************
- * Copyright 2016 Impinj, Inc.                                               *
+ * Copyright 2016-2017 Impinj, Inc.                                          *
  *                                                                           *
  * Licensed under the Apache License, Version 2.0 (the "License");           *
  * you may not use this file except in compliance with the License.          *
@@ -128,6 +128,89 @@ ipj_error ipj_util_register_handlers(ipj_iri_device* iri_device)
         }
     }
     return E_IPJ_ERROR_SUCCESS;
+}
+
+/*Code copied from IRI_Loader.c*/
+ipj_error ipj_util_flash_image(const char * image_name, char * com_port, ipj_iri_device * iri_device)
+{
+    /* Define error code */
+    ipj_error error;
+
+    /* Storage buffer for device read */
+    uint8_t file_buf[300];
+    FILE* image_file_handle;
+    int chunk_size;
+
+    /*Setup Device*/
+    error = ipj_util_setup(iri_device, com_port);
+    IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_util_setup");
+
+    /* Put the device in bootloader mode */
+    error = ipj_reset(iri_device, E_IPJ_RESET_TYPE_TO_BOOTLOADER);
+    IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_reset E_IPJ_RESET_TYPE_TO_BOOTLOADER");
+
+#if defined(__GNUC__)
+    image_file_handle = fopen(image_name, "rb");
+#else
+    fopen_s(&image_file_handle, image_name, "rb");
+#endif
+
+    if (image_file_handle == NULL)
+    {
+        printf("Unable to open image file\n");
+        return -1;
+    }
+
+    /* Get the image chunk size.  This is stored in the first 32 bits
+     * of the upgrade image */
+    if (fread(file_buf, 4, 1, image_file_handle) == 0)
+    {
+        printf("Unable to determine chunk size\n");
+        return -1;
+    }
+
+    chunk_size = (file_buf[0] & 0xff) | (file_buf[1] << 8) | (file_buf[2] << 16)
+            | (file_buf[3] << 24);
+
+    printf("Image chunk size: %d\n", chunk_size);
+    printf(
+            "(%d bytes header | %d bytes payload | 2 bytes CRC)\n",
+            12,
+            (chunk_size - 2) - 12);
+
+    if (chunk_size < 22 || chunk_size > 270)
+    {
+        printf("Invalid chunk size\n");
+        return -1;
+    }
+
+    /* For each chunk in the image file, write it to the device */
+    while (fread(file_buf, chunk_size, 1, image_file_handle) > 0)
+    {
+        error = ipj_flash_handle_loader_block(iri_device, chunk_size, file_buf);
+        IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_flash_handle_loader_block");
+    }
+
+    /* Deregister Handlers, Cleanup IRI_Device and Reset */
+    error = ipj_util_cleanup(iri_device);
+    IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_util_cleanup");
+
+    return error;
+}
+
+/*Util function to wait for receives or until stop handler triggered*/
+ipj_error ipj_util_wait_for_receive(ipj_iri_device * iri_device, uint32_t timeout_time_ms)
+{
+    ipj_error error;
+    ipj_stopped_flag = 0;
+
+    /*  Perform receive until end time reached or stop received */
+    while (!ipj_stopped_flag && (platform_timestamp_ms_handler() < timeout_time_ms))
+    {
+        error = ipj_receive(iri_device);
+        IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_receive");
+    }
+    return error;
 }
 
 ipj_error ipj_util_perform_inventory(ipj_iri_device* iri_device, uint32_t timeout_ms)
@@ -315,6 +398,15 @@ ipj_error ipj_util_tag_operation_report_handler(
                 (int) tag_operation_report->tag.epc.size / 2,
                 true);
     }
+	
+    /* If tag report has antenna, print antenna */
+	if (tag_operation_report->tag.has_antenna)
+	{
+		/* Print antenna */
+		printf("%s: Antenna = ", (char*)iri_device->reader_identifier);
+
+		printf("%d\r\n", tag_operation_report->tag.antenna);
+	}
 
     if (tag_operation_report->has_diagnostic)
     {
