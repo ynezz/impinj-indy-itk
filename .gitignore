@@ -1,1 +1,2 @@
-Makefile
+.gitignore
+build-*
