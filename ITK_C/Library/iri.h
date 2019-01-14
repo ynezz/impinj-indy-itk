@@ -23,7 +23,9 @@
 #include <stddef.h>
 #include <string.h>
 
+#ifdef USE_CONFIG_H
 #include "config.h"
+#endif
 
 #ifdef __cplusplus
 extern "C"
