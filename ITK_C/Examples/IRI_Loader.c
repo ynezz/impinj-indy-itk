@@ -132,10 +132,14 @@ int main(int argc, char* argv[])
     /* For each chunk in the image file, write it to the Indy Module */
     while (fread(file_buf, chunk_size, 1, image_file_handle) > 0)
     {
+        fprintf(stdout, ".");
+        fflush(stdout);
+
         error = ipj_flash_handle_loader_block(&iri_device, chunk_size, file_buf);
         IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_flash_handle_loader_block");
     }
 
+    printf("\n");
     printf("Image load complete\n");
 
     if (high_speed)
