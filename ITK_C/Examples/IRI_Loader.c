@@ -72,12 +72,34 @@ int main(int argc, char* argv[])
     error = ipj_util_setup(&iri_device, argv[1]);
     IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_util_setup");
 
-    /* Put the device in bootloader mode */
-    error = ipj_reset(&iri_device, E_IPJ_RESET_TYPE_TO_BOOTLOADER);
-    IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_reset E_IPJ_RESET_TYPE_TO_BOOTLOADER");
+    uint32_t value = 0;
+    bool in_bootstrap = false;
+    error = ipj_get_value(&iri_device, E_IPJ_KEY_IN_BOOTSTRAP, &value);
+    if (error == E_IPJ_ERROR_BTS_UNKNOWN_COMMAND || value == 1) {
+        in_bootstrap = true;
+        fprintf(stdout, "Device is in bootstrap mode\n");
+    } else if (error == E_IPJ_ERROR_API_CONNECTION_READ_TIMEOUT) {
+        in_bootstrap = true;
+        fprintf(stdout, "Device is possibly in bootstrap mode\n");
+    } else if (error == E_IPJ_ERROR_BTS_DEVICE_WATCHDOG_RESET) {
+        in_bootstrap = false;
+        fprintf(stdout, "Device is after watchdog reset\n");
+    } else {
+        IPJ_UTIL_RETURN_ON_ERROR(error, "get bootstrap mode");
+    }
 
-    if (high_speed)
-    {
+    /* Put the device in bootloader mode */
+    bool device_rebooted = false;
+    error = ipj_reset(&iri_device, E_IPJ_RESET_TYPE_TO_BOOTLOADER);
+    if (error == E_IPJ_ERROR_SUCCESS) {
+        fprintf(stdout, "Device rebooted\n");
+        device_rebooted = true;
+    }
+
+    if (!in_bootstrap || error != E_IPJ_ERROR_API_CONNECTION_READ_TIMEOUT)
+        IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_reset E_IPJ_RESET_TYPE_TO_BOOTLOADER");
+
+    if (device_rebooted && high_speed) {
         /* Speed up the upgrade process */
 
         /* Perform a modify connection command to bring the device
@@ -86,7 +108,7 @@ int main(int argc, char* argv[])
         params.serial.parity = E_IPJ_PARITY_PNONE;
 
         error = ipj_modify_connection(&iri_device,
-        E_IPJ_CONNECTION_TYPE_SERIAL, &params);
+                E_IPJ_CONNECTION_TYPE_SERIAL, &params);
         if (error)
         {
             printf("Unable to change baud rate");
@@ -129,6 +151,11 @@ int main(int argc, char* argv[])
         return -1;
     }
 
+    error = ipj_set_receive_timeout_ms(&iri_device, 10*IPJ_DEFAULT_RECEIVE_TIMEOUT_MS);
+    IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_set_receive_timeout_ms");
+
+    bool default_read_timeout = false;
+
     /* For each chunk in the image file, write it to the Indy Module */
     while (fread(file_buf, chunk_size, 1, image_file_handle) > 0)
     {
@@ -137,13 +164,18 @@ int main(int argc, char* argv[])
 
         error = ipj_flash_handle_loader_block(&iri_device, chunk_size, file_buf);
         IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_flash_handle_loader_block");
+
+        if (!default_read_timeout) {
+            ipj_set_receive_timeout_ms(&iri_device, IPJ_DEFAULT_RECEIVE_TIMEOUT_MS);
+            IPJ_UTIL_RETURN_ON_ERROR(error, "ipj_set_receive_timeout_ms");
+            default_read_timeout = true;
+        }
     }
 
     printf("\n");
     printf("Image load complete\n");
 
-    if (high_speed)
-    {
+    if (device_rebooted && high_speed) {
         /* Return to our previous baud rate */
         params.serial.baudrate = E_IPJ_BAUD_RATE_BR115200;
         error = ipj_modify_connection(&iri_device,
@@ -161,3 +193,5 @@ int main(int argc, char* argv[])
 
     return 0;
 }
+
+/* vim: set et sw=4 ts=4 sts=4 : */
